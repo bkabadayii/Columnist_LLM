@@ -5,6 +5,11 @@ from transformers import AutoTokenizer, AutoConfig, AutoModelForCausalLM, BitsAn
 import torch
 from trl import SFTTrainer
 
+def get_device_map() -> str:
+    return 'cuda' if torch.cuda.is_available() else 'cpu'
+
+print("torch.cuda availability:", torch.cuda.is_available())
+
 # Define the columnist / output directory
 columnist_name = "hilalkaplan"
 output_dir = f"./lora_mistral_tr_finetuned/{columnist_name}"
@@ -57,10 +62,10 @@ fp16 = False
 bf16 = False
 
 # Batch size per GPU for training
-per_device_train_batch_size = 4
+per_device_train_batch_size = 1
 
 # Batch size per GPU for evaluation
-per_device_eval_batch_size = 4
+per_device_eval_batch_size = 1
 
 # Number of update steps to accumulate the gradients for
 gradient_accumulation_steps = 1
@@ -118,8 +123,9 @@ device_map = {"": 0}
 # Fine-tuning
 ################################################################################
 
+csv_path = f"{columnist_name}_train.csv"
 # Load the CSV into a pandas DataFrame
-train_df = pd.read_csv(f'../../finetune_data/{columnist_name}/{columnist_name}_train.csv')
+train_df = pd.read_csv(csv_path)
 
 # Convert the pandas DataFrame into Hugging Face datasets format
 train_dataset = Dataset.from_pandas(train_df)
@@ -133,6 +139,17 @@ def create_prompt(sample):
     full_prompt += sample["Response"]
     return full_prompt
 
+def format_prompts(example):
+    output_texts = []
+    for i in range(len(example["Instruction"])):
+        sample = {}
+        sample["Instruction"] = example["Instruction"][i]
+        sample["Response"] = example["Response"][i]
+
+        text = create_prompt(sample)
+
+        output_texts.append(text)
+    return output_texts
 
 # bits and bytes config
 bnb_config = BitsAndBytesConfig(
@@ -191,7 +208,7 @@ trainer = SFTTrainer(
     peft_config=peft_config,
     max_seq_length=max_seq_length,
     tokenizer=tokenizer,
-    formatting_func=create_prompt,
+    formatting_func=format_prompts,
     args=training_arguments,
     packing=packing,
 )
