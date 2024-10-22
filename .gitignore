@@ -1,3 +1,15 @@
 .DS_Store
 .env
 columnist_data
+
+# MODELS
+mistral_tr_finetuned_hilalkaplan
+
+# CL
+lora_mistral_tr_finetuned
+
+# Output files
+*.out
+
+# Test files
+test.py
