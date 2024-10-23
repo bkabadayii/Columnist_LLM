@@ -12,14 +12,14 @@ print("torch.cuda availability:", torch.cuda.is_available())
 
 # Define the columnist / output directory
 columnist_name = "hilalkaplan"
-output_dir = f"./lora_mistral_tr_finetuned/{columnist_name}"
+output_dir = f"./lora_ytu_finetuned/{columnist_name}"
 
 
 # Model name to load
-model_name = "mistralai/Mistral-7B-Instruct-v0.2"
+model_name = "ytu-ce-cosmos/Turkish-Llama-8b-Instruct-v0.1"
 
 # Fine-tuned model name
-new_model = f"mistral_tr_finetuned_{columnist_name}"
+new_model = f"ytu_finetuned_{columnist_name}"
 
 ################################################################################
 # QLoRA parameters
@@ -124,26 +124,39 @@ device_map = {"": 0}
 ################################################################################
 
 csv_path = f"{columnist_name}_train.csv"
+
 # Load the CSV into a pandas DataFrame
 train_df = pd.read_csv(csv_path)
 
 # Convert the pandas DataFrame into Hugging Face datasets format
 train_dataset = Dataset.from_pandas(train_df)
 
+# Load the tokenizer
+print("Loading Tokenizer...")
+tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+tokenizer.pad_token = tokenizer.eos_token
+tokenizer.padding_side = "right"
+print("Tokenizer is loaded successfully.\n")
+
+dataset = train_dataset.train_test_split(test_size=0.01)
+
 # Define the prompt formatting function
 def create_prompt(sample):
-    full_prompt = "### Instruction: "
-    full_prompt += sample["Instruction"]
-    full_prompt += "### Response: "
-    full_prompt += sample["Response"]
+    system_message = "Sen bir türk gazetecisin. Görevin kullanıcının istediği bir konu hakkında köşe yazısı yazmak."
+    chat_template = [
+        { "role": "system", "content": system_message },
+        { "role": "user", "content": sample["Instruction"]},
+        { "role": "assistant", "content": sample["Response"]}
+    ]
+    full_prompt = tokenizer.apply_chat_template(chat_template, tokenize=False)
     return full_prompt
 
-def format_prompts(example):
+def format_prompts(examples):
     output_texts = []
-    for i in range(len(example["Instruction"])):
+    for i in range(len(examples["Instruction"])):
         sample = {}
-        sample["Instruction"] = example["Instruction"][i]
-        sample["Response"] = example["Response"][i]
+        sample["Instruction"] = examples["Instruction"][i]
+        sample["Response"] = examples["Response"][i]
 
         text = create_prompt(sample)
 
@@ -164,11 +177,6 @@ base_model = AutoModelForCausalLM.from_pretrained(
     quantization_config=bnb_config,
     device_map="auto"
 )
-
-# Load the tokenizer
-tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-tokenizer.pad_token = tokenizer.eos_token
-tokenizer.padding_side = "right"
 
 # Load LoRA configuration
 peft_config = LoraConfig(
@@ -203,7 +211,8 @@ training_arguments = TrainingArguments(
 # Set supervised fine-tuning parameters
 trainer = SFTTrainer(
     model=base_model,
-    train_dataset=train_dataset,
+    train_dataset=dataset["train"],
+    eval_dataset=dataset['test'],
     peft_config=peft_config,
     max_seq_length=max_seq_length,
     tokenizer=tokenizer,
@@ -212,6 +221,7 @@ trainer = SFTTrainer(
     packing=packing,
 )
 
+print("Training the model...")
 # Train model
 trainer.train()
 
