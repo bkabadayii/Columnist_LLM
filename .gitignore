@@ -3,13 +3,18 @@
 columnist_data
 
 # MODELS
-mistral_tr_finetuned_hilalkaplan
+models
 
-# CL
-lora_mistral_tr_finetuned
+# Model Logging
+lora_ytu_finetuned
 
-# Output files
+# Output and shell files
+*.txt
 *.out
+*.sh
+
+# Prediction Results
+eval_results
 
 # Test files
 test.py
