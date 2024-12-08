@@ -13,8 +13,5 @@ lora_ytu_finetuned
 *.out
 *.sh
 
-# Prediction Results
-eval_results
-
 # Test files
 test.py
