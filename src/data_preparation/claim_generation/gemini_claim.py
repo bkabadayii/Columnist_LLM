@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
 import google.generativeai as genai
 from dotenv import load_dotenv
@@ -149,13 +150,67 @@ def process_csv(file_path, output_path):
             print(f"Error processing article ID {article_id}: {e}")
 
     print("Processing complete. Results saved.")
+
+
+def process_article_concurrently(article_data):
+    try:
+        article_id = article_data['article_id']
+        content = article_data['article_content']
+        return process_article(content, article_id)
+    except Exception as e:
+        print(f"Error processing article ID {article_data['article_id']}: {e}")
+        return None
+
+def process_csv_parallel(file_path, output_path, max_workers=20):
+    # Load the CSV file
+    df = pd.read_csv(file_path)
+
+    # Initialize results list
+    all_results = []
+    
+    # Load already processed results if the output file exists
+    if os.path.exists(output_path):
+        with open(output_path, 'r') as f:
+            all_results = json.load(f)
+
+    # Create a set of already processed article IDs
+    processed_ids = {result["article_id"] for result in all_results}
+
+    # Filter articles to process
+    articles_to_process = df[~df['article_id'].isin(processed_ids)].to_dict(orient='records')
+
+    # Process articles in batches with a ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = []
+        for article_data in articles_to_process:
+            futures.append(executor.submit(process_article_concurrently, article_data))
+
+        for future in as_completed(futures):
+            result = future.result()
+            if result:
+                all_results.append(result)
+
+                # Save interim results to a file
+                with open(output_path, 'w') as f:
+                    json.dump(all_results, f, ensure_ascii=False, indent=4)
+                
+                print(f"Processed articles: {len(all_results)}/{len(articles_to_process)}%")
+
+    # At the end sort articles and save again
+    all_results.sort(key=lambda x: x['article_id'])
+    with open(output_path, 'w') as f:
+        json.dump(all_results, f, ensure_ascii=False, indent=4)
+
     print("Processing complete. Results saved.")
 
 def main():
-    input_csv = "../../../columnist_data/ismailsaymaz/cleaned_articles.csv"
-    output_json = "../../../columnist_data/claim_reasoning/ismailsaymaz.json"
+    columnist_name = "fehimtastekin"
+    input_csv = f"../../../columnist_data/{columnist_name}/cleaned_articles.csv"
+    output_json = f"../../../columnist_data/claim_reasoning/{columnist_name}.json"
 
-    process_csv(input_csv, output_json)
+    # process_csv(input_csv, output_json)
+    process_csv_parallel(input_csv, output_json)
+
 
 if __name__ == "__main__":
     main()
