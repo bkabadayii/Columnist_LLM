@@ -1,8 +1,10 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+from peft import PeftModel
 import torch
 import json
 import os
 from tqdm import tqdm
+import sys
 
 
 def predict_model(test_filename, model_id, model_path, output_path, columnist):
@@ -34,16 +36,20 @@ def predict_model(test_filename, model_id, model_path, output_path, columnist):
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
 
-    #quantization_config = BitsAndBytesConfig(
-    #    load_in_8bit=True,
-    #)
+    quantization_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16
+    )   
 
     
-    model = AutoModelForCausalLM.from_pretrained(
-        model_path,
-        device_map="auto",
-        #quantization_config=quantization_config
-    )
+    base_model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto")
+    lora_model = PeftModel.from_pretrained(base_model, model_path)
+
+    # Step 4: Merge LoRa weights into the base model
+    print("Merging LoRa adapter into the base model...")
+    model = lora_model.merge_and_unload()  # Applies LoRa weights and unloads the adapter
 
     # Step 3: Make predictions
     for claim in tqdm(test_data, desc="Running predictions"):
@@ -76,10 +82,12 @@ def predict_model(test_filename, model_id, model_path, output_path, columnist):
 
 
 # ---------- USAGE ---------- #
-columnist = "ismailsaymaz"
-test_filename = "./finetune_data/claim_reasoning/evet_test.json"
-model_path = f"./models/claim_reasoning/q_{columnist}"
-output_path = "./prediction_results/claim_reasoning/predictions_3.json"
+# Get columnist from system arguments
+columnist = sys.argv[1]
+
+test_filename = "./finetune_data/claim_questions/question_test.json"
+model_path = f"./models/claim_questions/{columnist}"
+output_path = "./prediction_results/claim_questions/predictions.json"
 
 # Base model ID
 model_id = "google/gemma-2-9b-it"

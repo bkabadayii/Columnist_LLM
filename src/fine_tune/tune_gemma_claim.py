@@ -55,16 +55,18 @@ def create_database(filename: str, test_size: float = 0.1):
         data = json.load(file)
 
     # Collect all claims as separate examples
-    claims, agreements, reasonings = [], [], []
+    claims, agreements, reasonings, questions = [], [], [], []
     for claim_data in data:
         claims.append(claim_data["claim"])
         agreements.append(claim_data["agreement"])
         reasonings.append(claim_data.get("reasoning", ""))
+        questions.append(claim_data["question"])
 
     dataset_dict = {
         "claim": claims,
         "agreement": agreements,
         "reasoning": reasonings,
+        "question": questions
     }
 
     dataset = Dataset.from_dict(dataset_dict)
@@ -75,7 +77,7 @@ def create_database(filename: str, test_size: float = 0.1):
     return dataset
 
 # ---------- Prompt Formatting ---------- #
-def create_prompt(sample):
+def create_prompt(sample, is_question):
     """
     Creates a formatted prompt for a single claim.
 
@@ -85,15 +87,27 @@ def create_prompt(sample):
     Returns:
         str: A formatted prompt.
     """
-    system_message = "Sen bir Türk köşe yazarısın. Görevin verilen iddiayı destekleyip desteklemediğini belirtmek ve gerekçesini açıklamaktır."
-    question = "Aşağıda verilen iddiayı destekliyor musunuz? Lütfen önce 'Evet' veya 'Hayır' olarak cevaplayıp ardından gerekçesini açıklayın."
+    if is_question:
+        system_message = "Sen bir Türk köşe yazarısın. Görevin sorulan soru hakkındaki fikrini ve gerekçesini açıklamaktır."
+        question = sample["question"]
 
-    chat_template = [
-        {"role": "user", "content": f"{system_message}\n\n{question}\n\n{sample['claim']}"},
-        {"role": "assistant", "content": f"{sample['agreement']}. {sample['reasoning']}"}
-    ]
+        chat_template = [
+            {"role": "user", "content": f"{system_message}\n\n{question}"},
+            {"role": "assistant", "content": f"{sample['claim']} {sample['reasoning']}"}
+        ]
 
-    full_prompt = tokenizer.apply_chat_template(chat_template, tokenize=False)
+        full_prompt = tokenizer.apply_chat_template(chat_template, tokenize=False)
+    else:
+        system_message = "Sen bir Türk köşe yazarısın. Görevin sorulan soru hakkındaki fikrini ve gerekçesini açıklamaktır."
+        question = "Aşağıda verilen iddiayı destekliyor musunuz? Lütfen önce 'Evet' veya 'Hayır' olarak cevaplayıp ardından gerekçesini açıklayın."
+
+        chat_template = [
+            {"role": "user", "content": f"{system_message}\n\n{question}\n\n{sample['claim']}"},
+            {"role": "assistant", "content": f"{sample['agreement']}. {sample['reasoning']}"}
+        ]
+
+        full_prompt = tokenizer.apply_chat_template(chat_template, tokenize=False)
+
     return full_prompt
 
 
@@ -113,9 +127,15 @@ def format_prompts(examples):
             "claim": examples["claim"][i],
             "agreement": examples["agreement"][i],
             "reasoning": examples["reasoning"][i],
+            "question": examples["question"][i]
         }
-        prompt = create_prompt(sample)
+        prompt = create_prompt(sample, is_question=False)
         prompts.append(prompt)
+
+        # If agreement == "Evet", add as a question chat
+        if examples["agreement"][i] == "Evet":
+            prompt = create_prompt(sample, is_question=True)
+            prompts.append(prompt)
 
     return prompts
 
@@ -136,16 +156,17 @@ def train(train_filename, new_model_path):
     # Configure LoRA
     peft_config = LoraConfig(
         r=128,
-        lora_alpha=128,
+        lora_alpha=64,
         lora_dropout=0.1,
         bias="none",
         task_type="CAUSAL_LM",
+        target_modules="all-linear"
     )
 
     # Set training parameters
     training_arguments = TrainingArguments(
         output_dir=new_model_path,
-        num_train_epochs=2,
+        num_train_epochs=1,
         per_device_train_batch_size=1,
         gradient_accumulation_steps=1,
         learning_rate=2e-4,
@@ -183,8 +204,8 @@ def train(train_filename, new_model_path):
 columnist_name = sys.argv[1]
 
 # columnist_name = "abdurrahmandilipak"
-train_filename = f"./finetune_data/claim_reasoning/{columnist_name}/{columnist_name}_train.json"
-new_model_path = f"./models/claim_reasoning/q_{columnist_name}"
+train_filename = f"./finetune_data/claim_questions/{columnist_name}/{columnist_name}_train.json"
+new_model_path = f"./models/claim_questions_1epoch/{columnist_name}"
 
 train(
     train_filename=train_filename,
