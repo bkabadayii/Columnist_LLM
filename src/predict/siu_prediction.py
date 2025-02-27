@@ -78,14 +78,16 @@ def predict_model(responding_columnist, target_columnist):
     )
     """
     base_model = AutoModelForCausalLM.from_pretrained(base_model_id, device_map="auto")
+    model = base_model
 
-    print(f"Loading LoRa adapter from: {model_path}")
-    lora_model = PeftModel.from_pretrained(base_model, model_path)
+    if (responding_columnist != "basemodel"):
+        print(f"Loading LoRa adapter from: {model_path}")
+        lora_model = PeftModel.from_pretrained(base_model, model_path)
 
-    # Merge LoRa weights into the base model
-    print("Merging LoRa adapter into the base model...")
-    model = lora_model.merge_and_unload()
-    model.eval()
+        # Merge LoRa weights into the base model
+        print("Merging LoRa adapter into the base model...")
+        model = lora_model.merge_and_unload()
+        model.eval()
 
     # ------------------------------------------------------------------------
     # 5. Generate predictions for each claim
