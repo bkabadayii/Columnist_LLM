@@ -204,8 +204,8 @@ def process_csv_parallel(file_path, output_path, max_workers=20):
     print("Processing complete. Results saved.")
 
 def main():
-    columnist_name = "fehimtastekin"
-    input_csv = f"../../../columnist_data/{columnist_name}/cleaned_articles.csv"
+    columnist_name = "selvi"
+    input_csv = f"../../../columnist_data/full_articles/{columnist_name}_articles.csv"
     output_json = f"../../../columnist_data/claim_reasoning/{columnist_name}.json"
 
     # process_csv(input_csv, output_json)
