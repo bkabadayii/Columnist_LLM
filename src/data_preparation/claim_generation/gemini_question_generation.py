@@ -106,18 +106,23 @@ def process_json(file_path, output_path, max_workers=20):
 
     # Load already processed results if the output file exists
     if os.path.exists(output_path):
-        with open(output_path, 'r', encoding='utf-8') as f:
+        with open(output_path, "r", encoding="utf-8") as f:
             all_results = json.load(f)
 
     # Create a set of already processed article IDs
     processed_ids = {result["article_id"] for result in all_results}
 
     # Filter articles to process
-    articles_to_process = [article for article in articles if article["article_id"] not in processed_ids]
+    articles_to_process = [
+        article for article in articles if article["article_id"] not in processed_ids
+    ]
 
     # Process articles concurrently
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(process_article, article): article["article_id"] for article in articles_to_process}
+        futures = {
+            executor.submit(process_article, article): article["article_id"]
+            for article in articles_to_process
+        }
 
         for future in as_completed(futures):
             article_id = futures[future]
@@ -127,7 +132,7 @@ def process_json(file_path, output_path, max_workers=20):
                     all_results.append(result)
 
                     # Save interim results to a file
-                    with open(output_path, 'w', encoding='utf-8') as f:
+                    with open(output_path, "w", encoding="utf-8") as f:
                         json.dump(all_results, f, ensure_ascii=False, indent=4)
 
                 print(f"Processed article ID: {article_id}")
@@ -139,8 +144,8 @@ def process_json(file_path, output_path, max_workers=20):
 
 
 def main():
-    input_json = "../../../columnist_data/claim_reasoning/hilalkaplan.json"
-    output_json = "output.json"
+    input_json = "../../../columnist_data/claim_reasoning/ahmethakan.json"
+    output_json = "../../../columnist_data/claim_questions/ahmethakan.json"
 
     process_json(input_json, output_json)
 
