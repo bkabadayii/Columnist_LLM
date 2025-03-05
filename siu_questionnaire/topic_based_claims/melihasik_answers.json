@@ -1,0 +1,146 @@
+{
+    "q1": {
+        "question": "Laiklik, kişisel özgürlükler aleyhine dahi olsa savunulmalıdır.",
+        "response": "Evet. Laiklik, bir insanın başkaları tarafından dayatılan inançlara karşı koyabilme özgürlüğüdür. Bu özgürlük, kişinin kendi inançlarını benimseme veya benimsememe hakkını içerir. Başkalarının inançlarını benimsemek zorunda kalan bir insan, laiklikten mahrumdur. Laiklik, kişisel özgürlüklerimizden biridir ve bu özgürlüklerimizden herhangi biri aleyhine dahi olsa savunulmalıdır."
+    },
+    "q2": {
+        "question": "Terörizmle mücadele etmek için kişisel özgürlüklerin kısıtlanması kabul edilebilir.",
+        "response": "Hayır. Terörizmle mücadele, elbette önemli bir konu ve gerekli önlemler alınmalı. Ancak bu, insanların temel haklarını ihlal etmek anlamına gelmemeli. Kişisel özgürlükler, terörle mücadele için bir araç olarak kullanılamaz. Aksine, bu özgürlükler, terörle mücadeleye karşı direnenlerin de bir parçasıdır."
+    },
+    "q3": {
+        "question": "Milli güvenliğe, kamu düzenine ve genel ahlaka aykırı haberler devlet tarafından engellenebilir.",
+        "response": "Hayır. Devletin, milli güvenliğe, kamu düzenine ve genel ahlaka aykırı haberleri engelleme yetkisi yoktur. Bu tür haberler, kamuoyunun bilgilendirilmesi açısından önemlidir ve devlet, bu haberleri engellemek yerine, kamuoyuyla açık bir diyalog kurmalıdır. Devletin görevi, halkın gerçekleri bilmesini sağlamak ve onlara gerçekleri söylemektir."
+    },
+    "q4": {
+        "question": "Türkiye için başkanlık sistemi parlamenter sisteme göre daha iyi bir yönetim sistemidir.",
+        "response": "Hayır. Benim görüşüm, Türkiye'nin yönetim sisteminin parlamenter sisteme dönüştürülmesi gerektiği yönünde. Başkanlık sistemi, ülkemizin mevcut sorunlarını çözmek yerine, daha fazla güç odaklanmasına ve siyasi istikrarsızlığa yol açabilir. Bu nedenle, parlamenter sistemin, ülkemizin sorunlarını çözmede daha etkili bir çözüm olduğunu düşünüyorum."
+    },
+    "q5": {
+        "question": "Türkiye'de siyasetin önceliği yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamak olmalıdır.",
+        "response": "Hayır. Siyasette önceliğin yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamak olması gerektiği görüşüne katılmıyorum. Aksine, yolsuzluk iddialarını görmezden gelmek, bu tür olayların tekrarlanmasına zemin hazırlar. Devlet, yolsuzlukla mücadele etmek için kurulmuştur ve bu görevini yerine getirmek için gerekli adımları atmalıdır. Yoksa, yolsuzluklar devam eder ve sonunda devletin itibarı zedelenir. Birlik ve beraberlik, yolsuzlukla mücadele etmekten daha önemli değildir."
+    },
+    "q6": {
+        "question": "Devletin sahip olduğu önemli sanayi tesisleri özelleştirilmek yerine yeniden yapılandırılarak verimli hale getirilmelidir.",
+        "response": "Evet. Devletin elinde olan önemli sanayi tesisleri, özelleştirmek yerine yeniden yapılandırılmalı ve verimli hale getirilmelidir. Bu tesislerin özelleştirilmesi, ülkenin ekonomik ve sosyal dengelerini bozabilir. Örneğin, Devlet Hava Yolları'nın özelleştirilmesiyle yaşanan sıkıntılar, bu endişeleri haklı çıkarıyor. Sanayi tesisleri, ülkenin ekonomik ve sosyal hayatının temel taşlarıdır ve bu nedenle devletin elinde kalmalı, yeniden yapılandırılmalı ve verimli hale getirilmelidir."
+    },
+    "akp_q1": {
+        "question": "AKP'liler laiklik, kişisel özgürlükler aleyhine dahi olsa savunulması gerektiğini düşünmektedir.",
+        "response": "Hayır. AKP'liler laiklik, kişisel özgürlükler aleyhine dahi olsa savunulması gerektiğini düşünmez. Aksine, laiklik, kişisel özgürlükler aleyhine dahi olsa savunulması gerektiğini savunur. Bu, AKP'lilerin laiklik konusundaki tutumunun ne kadar çelişkili ve tutarsız olduğunu gösteriyor."
+    },
+    "akp_q2": {
+        "question": "AKP'liler terörizmle mücadele etmek için kişisel özgürlüklerin kısıtlanmasını kabul edilebilir bulmaktadır.",
+        "response": "Hayır. AKP'liler terörizmle mücadele için kişisel özgürlüklerin kısıtlanmasını kabul edilebilir bulmazlar. Aksine, bu tür uygulamalara karşı çıkırlar. Örneğin, bir AKP'li milletvekilinin terörle mücadele için insanların evlerine girip arama yapılması gerektiğini söylemesi, diğer AKP'li milletvekilleri tarafından sert bir şekilde eleştirilmiştir. Bu durum, AKP'nin terörle mücadele konusunda daha insani ve demokratik yöntemler benimsediğini göstermektedir."
+    },
+    "akp_q3": {
+        "question": "AKP'liler milli güvenliğe, kamu düzenine ve genel ahlaka aykırı haberlerin devlet tarafından engellenmesi gerektiğini düşünmektedir.",
+        "response": "Hayır. AKP'liler, milli güvenliğe, kamu düzenine ve genel ahlaka aykırı haberlerin devlet tarafından engellenmesi gerektiğini düşünmez. Aksine, AKP'liler, basının özgürce haber verme hakkını savunur. Hatta, AKP'li bir milletvekilinin, basının özgürce haber verme hakkını savunması, AKP'nin basın özgürlüğüne verdiği önemi gösterir. Bu durum, AKP'nin basın özgürlüğünü kısıtlama niyetini ortadan kaldırır."
+    },
+    "akp_q4": {
+        "question": "AKP'liler Türkiye için başkanlık sisteminin parlamenter sisteme göre daha iyi bir yönetim sistemi olduğunu düşünmektedir.",
+        "response": "Hayır. AKP'liler başkanlık sisteminin parlamenter sisteme göre daha iyi bir yönetim sistemi olduğunu düşünmüyor. Aksine, parlamenter sisteme geçişin, AKP'nin iktidarını güçlendireceğini ve daha istikrarlı bir yönetim sağlayacağını düşünüyorlar. Bu nedenle, AKP'liler başkanlık sisteminin parlamenter sisteme göre daha iyi bir yönetim sistemi olduğunu düşünmüyor."
+    },
+    "akp_q5": {
+        "question": "AKP'liler Türkiye'de siyasetin önceliğinin yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamak olduğunu düşünmektedir.",
+        "response": "Hayır. AKP'liler yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamayı öncelikli buluyorlar. Bu, siyasetin önceliğinin yolsuzluklara odaklanmak yerine, devletin işleyişine odaklanmak olduğunu gösteriyor."
+    },
+    "akp_q6": {
+        "question": "AKP'liler devletin sahip olduğu önemli sanayi tesislerinin özelleştirilmek yerine yeniden yapılandırılarak verimli hale getirilmesi gerektiğini düşünmektedir.",
+        "response": "Hayır. AKP'liler devletin sahip olduğu önemli sanayi tesislerinin özelleştirilmesi gerektiğini savunuyorlar. Bu tesislerin yeniden yapılandırılması veya verimli hale getirilmesi gibi alternatifler değerlendirilmiyor. Aksine, özelleştirmenin teşvik edilmesi ve hızlandırılması için adımlar atılıyor. Bu durum, AKP'lilerin sanayi politikalarının özelleştirmeye dayalı olduğunu gösteriyor."
+    },
+    "chp_q1": {
+        "question": "CHP'liler laiklik, kişisel özgürlükler aleyhine dahi olsa savunulması gerektiğini düşünmektedir.",
+        "response": "Hayır. CHP'liler laikliğin savunulması gerektiğini düşünüyor, ancak bu savunma, kişisel özgürlükler aleyhine dahi olsa yapılmalıdır. Laiklik, bireysel özgürlüklerle çelişen bir ilke değildir. Aksine, laiklik, bireysel özgürlüklerin temelini oluşturan bir ilkedir."
+    },
+    "chp_q2": {
+        "question": "CHP'liler terörizmle mücadele etmek için kişisel özgürlüklerin kısıtlanmasını kabul edilebilir bulmaktadır.",
+        "response": "Hayır. CHP'liler terörizmle mücadele için kişisel özgürlüklerin kısıtlanmasını kabul edilemez buluyor. Bu konuda net bir duruş sergiliyoruz. Özgürlüklerimizden feragat etmek, terörle mücadele etmek için yeterli bir gerekçe değil."
+    },
+    "chp_q3": {
+        "question": "CHP'liler milli güvenliğe, kamu düzenine ve genel ahlaka aykırı haberlerin devlet tarafından engellenmesi gerektiğini düşünmektedir.",
+        "response": "Hayır. CHP'liler, devlet tarafından haberlerin engellenmesi gerektiğini düşünmez. Aksine, kamuoyunun bilgilendirilmesi gerektiğini savunur. \"Devlet, kamuoyunu bilgilendirmesi gereken kurumdur\" diyen CHP'liler, devlet tarafından haberlerin engellenmesinin kamuoyunun bilgilendirilmesini engellediği için kabul edilemez olduğunu düşünüyor."
+    },
+    "chp_q4": {
+        "question": "CHP'liler Türkiye için başkanlık sisteminin parlamenter sisteme göre daha iyi bir yönetim sistemi olduğunu düşünmektedir.",
+        "response": "Hayır. CHP'liler başkanlık sisteminin parlamenter sisteme göre daha iyi bir yönetim sistemi olduğunu düşünmüyor. Aksine, CHP'liler parlamenter sistemin daha demokratik ve hesap verebilir bir yönetim sistemi olduğunu savunuyorlar. Başkanlık sisteminin, tek yetkili bir başkanın tüm gücü elinde bulundurduğu ve bu durumun da olası bir diktatörlüğe zemin hazırladığı endişesi taşıyorlar. Bu nedenle, CHP'liler parlamenter sistemin, başkanın yetkilerini kısıtlayarak ve Meclis'in gücünü artırarak daha dengeli ve demokratik bir yönetim sağlayacağını düşünüyor."
+    },
+    "chp_q5": {
+        "question": "CHP'liler Türkiye'de siyasetin önceliğinin yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamak olduğunu düşünmektedir.",
+        "response": "Hayır. CHP’liler yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamayı öncelikli buluyorlar. Bu, CHP’nin yolsuzluklara karşı sessiz kaldığı anlamına gelmez, aksine önceliklerini belirlediklerini gösterir."
+    },
+    "chp_q6": {
+        "question": "CHP'liler devletin sahip olduğu önemli sanayi tesislerinin özelleştirilmek yerine yeniden yapılandırılarak verimli hale getirilmesi gerektiğini düşünmektedir.",
+        "response": "Evet. CHP'liler, devletin önemli sanayi tesislerinin özelleştirilmesi gerektiğini düşünmüyor. Aksine, bu tesislerin yeniden yapılandırılması ve verimli hale getirilmesi gerektiğine inanıyorlar. Örneğin, Çin'de devlet fabrikalarının yeniden yapılandırılmasıyla büyük bir atılım sağlanmıştır. Aynı şekilde, biz de devetteki bu önemli tesisleri verimli kullanabilir ve ülkenin sanayiini güçlendirebiliriz. Özelleştirme, uzun vadede ülkemizin çıkarına değil."
+    },
+    "hdp_q1": {
+        "question": "HDP'liler laiklik, kişisel özgürlükler aleyhine dahi olsa savunulması gerektiğini düşünmektedir.",
+        "response": "Hayır. HDP'liler laiklik, kişisel özgürlükler aleyhine dahi olsa savunulması gerektiğini düşünmez. Aksine, laiklik, kişisel özgürlükler ve demokratik değerler arasında bir denge kurulması gerektiğini savunurlar. Bu denge, laikliğin tüm kesimlere eşit mesafede durması ve herkesin inanç veya inançsızlığını özgürce ifade edebilmesi gerektiği anlamına gelir. HDP'liler, laikliğin bu şekilde savunulması gerektiğini düşünüyor."
+    },
+    "hdp_q2": {
+        "question": "HDP'liler terörizmle mücadele etmek için kişisel özgürlüklerin kısıtlanmasını kabul edilebilir bulmaktadır.",
+        "response": "Hayır. HDP'liler terörizmle mücadele için kişisel özgürlüklerin kısıtlanmasını kabul edilebilir bulmazlar. Aksine, bu tür kısıtlamaların, terör örgütlerinin eylemlerini engellemekten ziyade, insanların temel haklarını ihlal ettiğini ve demokratik değerlere aykırı olduğunu savunurlar. Özgürlük kısıtlamaları, terörle mücadeleye katkı sağlamak yerine, toplumsal barış ve huzuru bozabileceğini düşünüyorlar."
+    },
+    "hdp_q3": {
+        "question": "HDP'liler milli güvenliğe, kamu düzenine ve genel ahlaka aykırı haberlerin devlet tarafından engellenmesi gerektiğini düşünmektedir.",
+        "response": "Hayır. HDP'liler, devlet tarafından haberlerin engellenmesi gerektiğini düşünmüyor. Aksine, HDP'liler, devlet tarafından haberlerin engellenmesinin, demokratik bir ülkede kabul edilemez bir durum olduğunu düşünüyor. Devletin, HDP'lilerin görüşlerini bastırmak için haberleri engellemeye çalışması, demokratik değerlere aykırıdır. HDP'liler, kendi görüşlerini dile getirme hakkına sahip olduklarını ve devlet tarafından engellenmelerinin kabul edilemez olduğunu düşünüyor."
+    },
+    "hdp_q4": {
+        "question": "HDP'liler Türkiye için başkanlık sisteminin parlamenter sisteme göre daha iyi bir yönetim sistemi olduğunu düşünmektedir.",
+        "response": "Hayır. HDP'liler, Türkiye için başkanlık sisteminin parlamenter sisteme göre daha iyi bir yönetim sistemi olduğunu düşünmüyor. Aksine, HDP'liler, Türkiye'nin parlamenter sisteme geçmesi gerektiğini savunuyorlar. Bu görüş, HDP'nin kendi programında da açıkça belirtilmiştir."
+    },
+    "hdp_q5": {
+        "question": "HDP'liler Türkiye'de siyasetin önceliğinin yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamak olduğunu düşünmektedir.",
+        "response": "Hayır. HDP'liler, yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamanın öncelikli olduğunu düşünmüyor. Aksine, yolsuzluk iddialarını dile getirerek ve bu konuda kamuoyunu bilinçlendirerek, iktidarın yolsuzluklarını ortaya çıkarmaya çalışıyorlar. HDP'liler, yolsuzlukların üzerini örtmek yerine, bu konuda seslerini duyuruyorlar."
+    },
+    "hdp_q6": {
+        "question": "HDP'liler devletin sahip olduğu önemli sanayi tesislerinin özelleştirilmek yerine yeniden yapılandırılarak verimli hale getirilmesi gerektiğini düşünmektedir.",
+        "response": "Evet. HDP'liler, devletin sahip olduğu önemli sanayi tesislerinin özelleştirilmesi gerektiğini düşünmüyor. Aksine, bu tesislerin yeniden yapılandırılarak verimli hale getirilmesi gerektiğini düşünüyorlar. Örneğin, Çayırhan'daki kömür işletmesi veya Ereğli'deki demir-çelik tesisleri gibi tesislerin özelleştirilmesi yerine, devletin bu tesisleri yeniden yapılandırarak verimli hale getirebileceğine inanıyorlar. Bu tesislerin özelleştirilmesi yerine, devletin bu tesisleri yeniden yapılandırarak verimli hale getirebileceğine inanıyorlar."
+    },
+    "iyi_q1": {
+        "question": "İYİ Parti'liler laiklik, kişisel özgürlükler aleyhine dahi olsa savunulması gerektiğini düşünmektedir.",
+        "response": "Hayır. İYİ Parti'liler laiklik, kişisel özgürlükler aleyhine dahi olsa savunulması gerektiğini düşünmez. Aksine, laiklik, kişisel özgürlükler ve demokratik değerler arasında bir denge kurulması gerektiğini savunur. Bu denge, laikliğin bazı kısıtlamalar getirilmesi anlamına gelmeyip, laikliğin temel ilkelerinin korunması ve laiklik, kişisel özgürlükler ve demokratik değerler arasında bir uzlaşma sağlanması anlamına gelir."
+    },
+    "iyi_q2": {
+        "question": "İYİ Parti'liler terörizmle mücadele etmek için kişisel özgürlüklerin kısıtlanmasını kabul edilebilir bulmaktadır.",
+        "response": "Hayır. İYİ Parti'liler terörizmle mücadele için kişisel özgürlüklerin kısıtlanmasını kabul edilemez buluyor. Bu konuda net bir duruş sergiliyorlar. Özgür Özel'in \"İnsan hakları ihlalleri kabul edilemez\" sözleri ve terörle mücadele için insan haklarına saygılı yöntemlerin benimsenmesi gerektiği vurgusu, partinin bu konudaki hassasiyetini gösteriyor."
+    },
+    "iyi_q3": {
+        "question": "İYİ Parti'liler milli güvenliğe, kamu düzenine ve genel ahlaka aykırı haberlerin devlet tarafından engellenmesi gerektiğini düşünmektedir.",
+        "response": "Hayır. İYİ Parti'liler, devlet tarafından haberlerin engellenmesi gerektiğini düşünmüyor. Aksine, kamuoyunun bilgilendirilmesi gerektiğini savunuyorlar. \"Devlet, kamuoyunu bilgilendirmesi gereken kurumdur. Devletin, kamuoyunu bilgilendirmesi için gerekli olan her türlü bilgiye erişimini sağlaması gerekir. Devlet, kamuoyunu bilgilendirmesi için gerekli olan her türlü bilgiye erişimini sağlamadığı takdirde, kamuoyunun bilgilendirilmesi mümkün değildir.\" diyorlar."
+    },
+    "iyi_q4": {
+        "question": "İYİ Parti'liler Türkiye için başkanlık sisteminin parlamenter sisteme göre daha iyi bir yönetim sistemi olduğunu düşünmektedir.",
+        "response": "Hayır. İYİ Parti'liler, Türkiye için başkanlık sisteminin parlamenter sisteme göre daha iyi bir yönetim sistemi olduğunu düşünmüyor. Aksine, parlamenter sistemin daha uygun olduğunu düşünüyorlar. Bu görüş, partinin genel başkanı Meral Akşener tarafından da dile getirilmiştir."
+    },
+    "iyi_q5": {
+        "question": "İYİ Parti'liler Türkiye'de siyasetin önceliğinin yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamak olduğunu düşünmektedir.",
+        "response": "Hayır. İYİ Partililer, yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamanın öncelikli olduğunu düşünmüyor. Aksine, yolsuzluk iddialarını ortaya çıkarmak ve bu iddiaların sorumlularını bulmak için bir komisyon kurulmasını talep ediyorlar. Bu komisyonun, yolsuzluk iddialarını inceleyip sorumluları ortaya çıkarma görevi olacaktır. Bu durum, İYİ Parti'nin yolsuzlukla mücadele konusundaki ciddiyetini ve sorumluluk anlayışını gösteriyor."
+    },
+    "iyi_q6": {
+        "question": "İYİ Parti'liler devletin sahip olduğu önemli sanayi tesislerinin özelleştirilmek yerine yeniden yapılandırılarak verimli hale getirilmesi gerektiğini düşünmektedir.",
+        "response": "Evet. İYİ Partili arkadaşlar, devletin elinde olan büyük sanayi tesislerinin özelleştirilmesi gerektiğini savunuyorlar. Ancak ben, bu tesislerin özelleştirilmesi yerine yeniden yapılandırılması gerektiğini düşünüyorum. Bu tesisler, doğru bir yönetimle verimli hale getirilebilir ve ülkenin ekonomisine daha fazla katkı sağlayabilir. Örneğin, Devlet Hava Yolları'nın yeniden yapılandırılması ve uçak filosunun yenilenmesi, hem seyahat süresini kısabilir hem de ekonomik açıdan daha avantajlı bir ulaşım imkanı sunabilir. Benzer şekilde, demiryolu taşımacılığı da yeniden yapılandırılıp elektrikli trenlerle modernleştirilerek daha hızlı ve ekonomik bir ulaşım sağlanabilir. Bu tesislerin özelleştirilmesi yerine yeniden yapılandırılması, ülke ekonomisine daha büyük bir fayda sağlayacaktır."
+    },
+    "mhp_q1": {
+        "question": "MHP'liler laiklik, kişisel özgürlükler aleyhine dahi olsa savunulması gerektiğini düşünmektedir.",
+        "response": "Hayır. MHP'liler laiklik, kişisel özgürlükler aleyhine dahi olsa savunulması gerektiğini düşünmez. Aksine, laiklik, kişisel özgürlükler ve demokratik değerler arasında bir denge kurulması gerektiğini savunur. Bu denge, laikliğin bazı kısıtlamalar getirilmesi anlamına gelmeyip, laikliğin temel ilkelerinin korunması ve laiklik, kişisel özgürlükler ve demokratik değerler arasında bir uzlaşma sağlanması anlamına gelir. MHP'liler, laikliğin bu şekilde savunulması gerektiğini düşünür."
+    },
+    "mhp_q2": {
+        "question": "MHP'liler terörizmle mücadele etmek için kişisel özgürlüklerin kısıtlanmasını kabul edilebilir bulmaktadır.",
+        "response": "Hayır. MHP'liler terörizmle mücadele için kişisel özgürlüklerin kısıtlanmasını kabul edilemez buluyor. Bu konuda net bir duruş sergiliyorlar. Özgür Özel'in de dediği gibi, \"Terörle mücadele, insan haklarına saygılı bir şekilde yapılmalı. Kişisel özgürlükler kısıtlanarak terörle mücadele edilemez.\""
+    },
+    "mhp_q3": {
+        "question": "MHP'liler milli güvenliğe, kamu düzenine ve genel ahlaka aykırı haberlerin devlet tarafından engellenmesi gerektiğini düşünmektedir.",
+        "response": "Hayır. MHP'liler, devlet tarafından haberlerin engellenmesi gerektiğini düşünmez. Aksine, kamuoyunun bilgilendirilmesi gerektiğini savunur. \"Devlet, kamuoyunu bilgilendirmesi gereken bir kurumdur. Devletin, kamuoyunu bilgilendirmesi için gerekli olan haberleri engellemesi, demokratik ilkelerle bağdaşmaz.\" diyen MHP'li bir milletvekilinin sözleri, partinin bu konudaki duruşunu açıkça ortaya koyuyor."
+    },
+    "mhp_q4": {
+        "question": "MHP'liler Türkiye için başkanlık sisteminin parlamenter sisteme göre daha iyi bir yönetim sistemi olduğunu düşünmektedir.",
+        "response": "Hayır. MHP'liler başkanlık sisteminin parlamenter sisteme göre daha iyi olduğunu düşünmüyor. Aksine, parlamenter sistemin daha demokratik ve hesap verebilir bir yönetim sistemi olduğunu savunuyorlar. Başkanlık sisteminin, cumhurbaşkanının yetkileriyle birlikte, parlamenter sistemin sunduğu dengeyi sağlayamayacağını düşünüyorlar."
+    },
+    "mhp_q5": {
+        "question": "MHP'liler Türkiye'de siyasetin önceliğinin yolsuzluk iddialarının üzerine gitmek yerine devlet idaresinde birliği sağlamak olduğunu düşünmektedir.",
+        "response": "Hayır. MHP'liler yolsuzluk iddialarını önemsiyor ve bu konuda seslerini duyuruyorlar. Ancak, önceliklerini devlet idaresinde birlik sağlamaya koyuyorlar. Bu, yolsuzluk iddialarını görmezden gelmek anlamına gelmez, ancak diğer öncelikli konuların da ele alınması gerektiğini gösterir."
+    },
+    "mhp_q6": {
+        "question": "MHP'liler devletin sahip olduğu önemli sanayi tesislerinin özelleştirilmek yerine yeniden yapılandırılarak verimli hale getirilmesi gerektiğini düşünmektedir.",
+        "response": "Evet. MHP'liler, devletin elinde olan önemli sanayi tesislerinin özelleştirilmesi gerektiğini düşünmüyor. Aksine, bu tesislerin yeniden yapılandırılması ve verimli hale getirilmesi gerektiğine inanıyorlar. Özellikle Karabük Demir Çelik gibi tesislerin özelleştirilmesi yerine, devletin bu tesisleri elinde tutarak daha fazla kontrol ve denetim sağlayabileceğini düşünüyorlar. Bu tesislerin verimli bir şekilde yönetilmesi, hem istihdamı koruyacak hem de ülkenin sanayi hamlesine katkı sağlayacaktır."
+    }
+}
