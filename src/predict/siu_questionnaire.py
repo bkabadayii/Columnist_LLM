@@ -43,7 +43,13 @@ def predict_response(tokenizer, model, system_message, question, device="cuda"):
         add_generation_prompt=True
     ).to(device)
 
-    outputs = model.generate(**input_ids, max_new_tokens=256)
+    outputs = model.generate(
+        **input_ids,
+        max_new_tokens=256,
+        do_sample=True,         # Enable sampling for variability
+        temperature=0.5,        # Controls randomness; higher values yield more diverse outputs    
+    )
+
     response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
     # If your model uses a special delimiter (e.g. "\nmodel\n"), adjust accordingly.
@@ -55,9 +61,19 @@ def predict_response(tokenizer, model, system_message, question, device="cuda"):
     return response
 
 def main():
-    # Check if the model name is provided in the command-line arguments
-    if len(sys.argv) < 4:
-        print("Usage: python script.py <responding_columnist> <system_prompt_id> <questionnaire_dir>")
+    # Check for the correct number of command-line arguments
+    if len(sys.argv) < 5:
+        print("Usage: python script.py <responding_columnist> <system_prompt_id> <questionnaire_dir> <n>")
+        sys.exit(1)
+    
+    responding_columnist = sys.argv[1]
+    system_prompt_id = sys.argv[2]
+    questionnaire_dir = sys.argv[3]
+    
+    try:
+        n = int(sys.argv[4])
+    except ValueError:
+        print("The value for n must be an integer.")
         sys.exit(1)
     
     responding_columnist = sys.argv[1]
@@ -101,19 +117,25 @@ def main():
     
     # Process each question from the JSON file
     for q_key, question in tqdm(questions_data.items()):
-        try:
-            response = predict_response(tokenizer, model, system_message, question)
+        responses = []
+
+        for i in range(n):
+            try:
+                response = predict_response(tokenizer, model, system_message, question)
+                responses.append(response)
+            except Exception as e:
+                print(f"Error processing {q_key} for answer {i+1}: {e}")
+                responses.append(f"Error: {e}")
+
             answers[q_key] = {
                 "question": question,
-                "response": response
+                "responses": responses
             }
-            
-            # Save the answers to file after each question
-            with open(output_file, "w", encoding="utf-8") as out_f:
-                json.dump(answers, out_f, ensure_ascii=False, indent=4)
-            
-        except Exception as e:
-            print(f"Error processing {q_key}: {e}")
+        
+        # Save the answers to file after each question
+        with open(output_file, "w", encoding="utf-8") as out_f:
+            json.dump(answers, out_f, ensure_ascii=False, indent=4)
+        
     
     print(f"All answers saved to {output_file}")
 
